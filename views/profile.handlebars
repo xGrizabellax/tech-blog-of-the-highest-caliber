@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="col-auto">
+        <h2>Welcome, {{name}}!</h2>
+    </div>
+</div>
+
+<div class='row mt-4'>
+    <div class='col-md-6'>
+        <h1>CREATE A PROJECT</h1>
+
+        <form class='form create-project'>
+            <div class='form-group'>
+                <label for='project-name'>Project Name</label>
+                <input class='form-input' type='text' id='project-name'>
+            </div>
+            <div class='form-group'>
+                <label for='project-description'>Description</label>
+                <input class='form-input' type='text' id='project-description'>
+            </div>
+            <div class='form-group'>
+                <label for='funding-needed'>Funding Needed</label>
+                <input class='form-input' type='number' id='funding-needed'>
+            </div>
+            <div class='form-group'>
+                <button type='submit' class='btn btn primary'>Submit Project</button>
+            </div>
+        </form>
+
+    </div>
+
+
+
+    {{#if projects.length}}
+    <div class='col-md-6 user-projects'>
+        <h3>{{name}}'s Projects:</h3>
+
+        {{#each projects as |project|}}
+        <div class='row mb-2 justify-space-between'>
+            <div class='col md-9'>
+                <h2><a href='/project/{{project.id}}'>{{project.name}}</a></h2>
+            </div>
+            <div class='col md-3'>
+                <button class="btn btn-sm btn-danger" data-id='{{project.id}}'>DELETE</button>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
+</div>
+
+<script src='/js/profile.js'></script>
