@@ -1,14 +1,16 @@
 const createNewUser = async (event) => {
     event.preventDefault();
 
-    const name = document.querySelector('#create-name').value.trim()
+    const username = document.querySelector('#create-username').value.trim()
     const email = document.querySelector('#create-email').value.trim()
     const password = document.querySelector('#create-password').value.trim()
+    const confirmPass = document.querySelector('#confirm-password').value.trim()
 
-    if (name && email && password) {
+    if (username && email && password && confirmPass) {
+        if (password === confirmPass) {
         const response = await fetch('/api/users', {
             method: 'POST',
-            body: JSON.stringify({ name, email, password }),
+            body: JSON.stringify({ username, email, password }),
             headers: { 'Content-Type': 'application/json' },
         })
         if (response.ok) {
@@ -17,6 +19,9 @@ const createNewUser = async (event) => {
             alert(response.statusText);
             // document.location.replace('/login')
         }
+    } else {
+        alert("Your passwords didn't match!")
+    }
     }
 }
 

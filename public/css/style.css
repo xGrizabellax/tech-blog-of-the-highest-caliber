@@ -23,6 +23,50 @@ header, .project:not(:last-child) {
   margin-left: -5px;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
+  color: aquamarine;
+  font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+p {
+  color: rgb(203, 192, 253);
+  font-size: 85%;
+}
+
 h3 {
   text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+.new-post-card{
+  background-color: rgb(56, 85, 109);
+  width: auto;
+  padding: 10px;
+  border: solid 1px black;
+  border-radius: 20px;
+}
+
+.post-card {
+  background-color: rgb(80, 79, 79);
+  opacity: 80%;
+  border: solid 5px black;
+  border-radius: 10px;
+}
+
+.post-card:hover {
+  background-color: black;
+  border: solid 5px cyan;
 }
