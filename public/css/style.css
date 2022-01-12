@@ -77,6 +77,10 @@ p {
   align-items: center;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 
 
 .current-post {
