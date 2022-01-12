@@ -27,10 +27,9 @@
 
 
 
-    {{#if posts.length}}
     <div class='col-md-6 user-posts'>
         <h3>{{username}}'s Posts:</h3>
-
+    {{#if posts.length}}
         {{#each posts as |post|}}
         <div class='row mb-2 justify-space-between'>
             <div class='col md-9'>
@@ -41,8 +40,8 @@
             </div>
         </div>
         {{/each}}
+            {{/if}}
     </div>
-    {{/if}}
 </div>
 
 <script src='/js/profile.js'></script>

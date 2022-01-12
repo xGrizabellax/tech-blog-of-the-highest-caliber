@@ -1,12 +1,20 @@
 <div class="text-center">
-    <h2>{{name}}</h2>
-    <h6>{{body}}</h6>
-    <p>Posted by: {{user.username}} on {{format_date date_created}}</p>
+    <h2 class='ind-post-title'>{{name}}</h2>
+    <div class='row current-post'>
+        <div class='col-md-6'>
+            <h6 class='current-post-body py-2'>{{body}}</h6>
+            <p>Posted by: {{user.username}} on {{format_date date_created}}</p>
+        </div>
+    </div>
 
     <form class='form create-comment'>
         <div class='form-group leave-comment'>
             <label for='comment-text'>Comments:</label>
-            <textarea class='form-input' type='text' id='comment-text' placeholder="Leave a comment"></textarea>
+            <div class='row text-comment'>
+                <div class='col-md-6'>
+                    <textarea class='form-input' type='text' id='comment-text' placeholder="Leave a comment"></textarea>
+                </div>
+            </div>
         </div>
         <div class='form-group'>
             <button type='submit' class="btn btn-primary">COMMENT</button>
@@ -14,10 +22,10 @@
     </form>
 
 
-    {{#if comments.length}}
+
     <div class='row comment-section justify-center'>
         <div class='col-md-6 user-comments'>
-
+            {{#if comments.length}}
             {{#each comments as |comment|}}
             <h6 class='comment-username'>{{user.username}}</h6>
             <div class='row mb-2'>
@@ -28,15 +36,16 @@
 
             <div class='row'>
                 <div class='col md-3 mb-5'>
-                    <button class="btn btn-sm btn-danger" data-id='{{comment.id}}'>Delete</button>
+                    <button class="btn btn-sm btn-danger" data-id='{{comment.id}}'>Delete Comment</button>
                 </div>
                 <p class='mx-3'>Created on {{format_date date_created}}</p>
             </div>
-            
+
             {{/each}}
+            {{/if}}
         </div>
     </div>
-    {{/if}}
+
 </div>
 
 <script src='/js/post.js'></script>

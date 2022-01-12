@@ -60,6 +60,29 @@ p {
   font-size: 85%;
 }
 
+.ind-post-title {
+  color: rgb(182, 92, 18);
+}
+
+.current-post {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.current-post-body {
+  background-color: rgb(255, 250, 221);
+  color: rgb(182, 92, 18);
+  border: solid 1px rgb(253, 70, 70);
+  border-radius: 3px;
+  height: 5em;
+}
+
+.text-comment {
+  display: flex;
+  justify-content: center;
+}
+
 h3 {
   text-align: center;
 }
