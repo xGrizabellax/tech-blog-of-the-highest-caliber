@@ -72,12 +72,16 @@ router.get('/profile', isAuth, async (req, res) => {
 })
 
 router.get('/login', async (req, res) => {
-    if (req.session.logged_in) {
+    try {
+        if (req.session.logged_in) {
         res.redirect('/profile');
         return;
     }
 
     res.render('login')
+} catch(err) {
+    res.status(500).json(err)
+}
 })
 
 module.exports = router;
