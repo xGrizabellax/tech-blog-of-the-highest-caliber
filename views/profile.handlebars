@@ -9,7 +9,7 @@
     <div class='col-md-6'>
         <h1>CREATE A TECH POST</h1>
 
-        <form class='form create-project'>
+        <form class='form create-post'>
             <div class='form-group'>
                 <label for='post-name'>Post-Title</label>
                 <input class='form-input' type='text' id='post-name'>
@@ -19,7 +19,7 @@
                 <textarea class='form-input' type='text' id='post-body'></textarea>
             </div>
             <div class='form-group'>
-                <button type='submit' class='btn btn primary'>Submit Project</button>
+                <button type='submit' class='btn btn primary'>Submit Post</button>
             </div>
         </form>
 
@@ -27,17 +27,17 @@
 
 
 
-    {{#if projects.length}}
-    <div class='col-md-6 user-projects'>
-        <h3>{{name}}'s Projects:</h3>
+    {{#if posts.length}}
+    <div class='col-md-6 user-posts'>
+        <h3>{{username}}'s Posts:</h3>
 
-        {{#each projects as |project|}}
+        {{#each posts as |post|}}
         <div class='row mb-2 justify-space-between'>
             <div class='col md-9'>
-                <h2><a href='/project/{{project.id}}'>{{project.name}}</a></h2>
+                <h2><a href='/post/{{post.id}}'>{{post.name}}</a></h2>
             </div>
             <div class='col md-3'>
-                <button class="btn btn-sm btn-danger" data-id='{{project.id}}'>DELETE</button>
+                <button class="btn btn-sm btn-danger" data-id='{{post.id}}'>DELETE</button>
             </div>
         </div>
         {{/each}}

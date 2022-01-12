@@ -1,14 +1,14 @@
-const createProject = async (event) => {
+const createPost = async (event) => {
     event.preventDefault();
 
-    const name = document.querySelector('#project-name').value.trim();
-    const description = document.querySelector('#project-description').value.trim();
-    const needed_funding = document.querySelector('#funding-needed').value.trim();
+    const name = document.querySelector('#post-name').value.trim();
+    const body = document.querySelector('#post-body').value.trim();
 
-    if (name && needed_funding && description) {
-        const response = await fetch('/api/projects', {
+    if (name && body) {
+        console.log(body)
+        const response = await fetch('/api/posts', {
             method: 'POST',
-            body: JSON.stringify({ name, needed_funding, description }),
+            body: JSON.stringify({ name, body }),
             headers: { 'Content-Type': 'application/json', },
         });
 
@@ -20,12 +20,12 @@ const createProject = async (event) => {
     }
 }
 
-const deleteProject = async (event) => {
+const deletePost = async (event) => {
     if (event.target.hasAttribute('data-id')) {
         const id = event.target.getAttribute('data-id')
         console.log(id)
 
-        const response = await fetch(`/api/projects/${id}`, {
+        const response = await fetch(`/api/posts/${id}`, {
             method: 'DELETE',
         });
 
@@ -40,9 +40,9 @@ const deleteProject = async (event) => {
 
 
 document
-    .querySelector('.create-project')
-    .addEventListener('submit', createProject)
+    .querySelector('.create-post')
+    .addEventListener('submit', createPost)
 
 document
-    .querySelector('.user-projects')
-    .addEventListener('click', deleteProject)
+    .querySelector('.user-posts')
+    .addEventListener('click', deletePost)
