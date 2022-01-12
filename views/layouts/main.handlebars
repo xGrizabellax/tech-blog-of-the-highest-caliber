@@ -18,10 +18,10 @@
             </h1>
             <nav>
                 {{#if logged_in}}
-                <a class='profile-btn' href='/profile'>profile</a>
-                <button class='no-button' id='logout'>logout</button>
+                <a class='profile-btn nav-btn mx-2' href='/profile'>profile</a>
+                <button class='no-button nav-btn mx-2' id='logout'>logout</button>
                 {{else}}
-                <a href="/login">login</a>
+                <a class='login-btn nav-btn mx-2' href="/login">login</a>
                 {{/if}}
             </nav>
         </header>
