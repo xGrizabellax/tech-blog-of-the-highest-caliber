@@ -39,6 +39,8 @@ const deletePost = async (event) => {
 
 
 
+
+
 document
     .querySelector('.create-post')
     .addEventListener('submit', createPost)

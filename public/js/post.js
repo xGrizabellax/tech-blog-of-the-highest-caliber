@@ -2,8 +2,8 @@ const createComment = async (event) => {
     event.preventDefault();
 
     const text = document.querySelector('#comment-text').value.trim();
-    const windowLength = window.location.toString().split('').length
-    const post_id = window.location.toString().split('')[windowLength - 1]
+    const post_id = window.location.toString().split('/').at(-1)
+    // const post_id = window.location.toString().split('')[windowLength - 1]
     console.log(text)
 
     if (text) {
