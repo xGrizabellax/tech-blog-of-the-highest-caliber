@@ -12,13 +12,13 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({ helpers })
-const oneHour = 60 * 60 * 1000
+const oneDay = 60 * 60 * 24 * 1000
 
 
 const sess = {
   secret: 'Super secret secret',
   cookie: {
-      limit: oneHour
+      maxAge: oneDay
   },
   resave: false,
   saveUninitialized: true,
