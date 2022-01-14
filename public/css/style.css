@@ -170,6 +170,7 @@ h1 {
   border-radius: 5px;
   border: solid 2px rgb(57, 127, 231);
   opacity: 80%;
+  overflow-y: scroll;
 }
 
 .comment-body:hover {
@@ -182,7 +183,6 @@ h1 {
 
 .comment-letters {
   color: black;
-  overflow-y: scroll;
 }
 
 .comment-section {
