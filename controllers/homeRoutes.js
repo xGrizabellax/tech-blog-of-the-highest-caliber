@@ -78,10 +78,14 @@ router.get('/edit-post/:id', isAuth, async (req, res) => {
 router.get('/edit-comment/:id', isAuth, async (req, res) => {
     try {
         const commentData = await Comment.findByPk(req.params.id, {
+            where: {
+                id: req.params.id,
+                user_id: req.session.user_id,
+              },
             include: [
                 {
                     model: User,
-                    attributes: ['username'],
+                    attributes: ['username', 'id'],
                 },
                 {
                     model: Post,
@@ -89,12 +93,20 @@ router.get('/edit-comment/:id', isAuth, async (req, res) => {
                 }
             ],
         })  
-        
         const comment = commentData.get({plain: true})
-        res.render('edit-comment', {
-            ...comment,
-            logged_in: req.session.logged_in
-        })
+
+        if (comment.user_id === req.session.user_id) {
+            res.render('edit-comment', {
+                ...comment,
+                logged_in: req.session.logged_in
+            })
+        } else {
+            res.render('post')
+        }
+        // res.render('edit-comment', {
+        //     ...comment,
+        //     logged_in: req.session.logged_in
+        // })
     } catch (err) {
         res.status(500).json(err);
     }
