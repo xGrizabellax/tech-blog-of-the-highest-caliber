@@ -182,6 +182,7 @@ h1 {
 
 .comment-letters {
   color: black;
+  overflow-y: scroll;
 }
 
 .comment-section {
