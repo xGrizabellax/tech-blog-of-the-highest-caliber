@@ -16,6 +16,20 @@ router.post('/', isAuth, async (req, res) => {
   }
 });
 
+router.put('/editcomment/:id', isAuth, async (req, res) => {
+  try {
+    const commentData = await Comment.update(req.body, {
+      where: {
+        id: req.params.id,
+        user_id: req.session.user_id,
+      },
+    })
+    res.status(200).json(commentData)
+  } catch (err) {
+    res.status(500).json(err)
+  }
+})
+
 router.delete('/:id', async (req, res) => {
   try {
     const commentData = await Comment.destroy({

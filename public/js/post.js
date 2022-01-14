@@ -39,11 +39,10 @@ const deleteComment = async (event) => {
 };
 
 
-
 document
     .querySelector('.create-comment')
     .addEventListener('submit', createComment)
 
 document
-    .querySelector('.user-comments')
+    .querySelector('.delete-comment')
     .addEventListener('click', deleteComment)

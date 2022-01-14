@@ -17,16 +17,19 @@ router.post('/', isAuth, async (req, res) => {
   }
 });
 
-router.put('/:id', async (req, res) => {
+router.put('/editpost/:id', isAuth, async (req, res) => {
+  console.log(req.body)
   try {
-    const postData = await Post.update({
+    const postData = await Post.update(req.body, {
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
       },
     })
+    console.log(postData)
+    res.status(200).json(postData)
   } catch (err) {
-    res.status(500).json(postData)
+    res.status(500).json(err)
   }
 })
 

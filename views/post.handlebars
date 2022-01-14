@@ -36,7 +36,10 @@
 
             <div class='row'>
                 <div class='col md-3 mb-5'>
-                    <button class="btn btn-sm btn-danger" data-id='{{comment.id}}'>Delete Comment</button>
+                    <button class="btn btn-sm btn-danger delete-comment" data-id='{{comment.id}}'>Delete</button>
+                </div>
+                <div class='col md-3 mb-5'>
+                    <a class="btn btn-sm btn-secondary edit-post" href='/edit-comment/{{comment.id}}'>Edit</a>
                 </div>
                 <p class='mx-3'>Created on {{format_date date_created}}</p>
             </div>
@@ -47,5 +50,6 @@
     </div>
 
 </div>
-
+{{#if comments.length}}
 <script src='/js/post.js'></script>
+{{/if}}

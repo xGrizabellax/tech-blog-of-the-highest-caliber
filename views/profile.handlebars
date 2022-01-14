@@ -36,12 +36,14 @@
                 <h2><a href='/post/{{post.id}}'>{{post.name}}</a></h2>
             </div>
             <div class='col md-3'>
-                <button class="btn btn-sm btn-danger" data-id='{{post.id}}'>DELETE</button>
+                <button class="btn btn-sm btn-danger delete-post" data-id='{{post.id}}'>DELETE</button>
+                <a class="btn btn-sm btn-secondary edit-post" href='/edit-post/{{post.id}}'>EDIT</a>
             </div>
         </div>
         {{/each}}
             {{/if}}
     </div>
 </div>
+
 
 <script src='/js/profile.js'></script>

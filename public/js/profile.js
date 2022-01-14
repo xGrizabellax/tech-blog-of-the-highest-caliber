@@ -40,11 +40,14 @@ const deletePost = async (event) => {
 
 
 
-
 document
     .querySelector('.create-post')
     .addEventListener('submit', createPost)
+// const postCreate = document.querySelector('.create-post')
+// postCreate.addEventListener('submit', createPost)
 
 document
-    .querySelector('.user-posts')
+    .querySelector('.delete-post')
     .addEventListener('click', deletePost)
+
+
