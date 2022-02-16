@@ -1,7 +1,7 @@
 # Tech Blog of the Highest Caliber ![License: MIT](<https://img.shields.io/badge/License-MIT-yellow.svg>)
 
   A tech blog where users can make tech-related posts, after creating an account. Then other users may comment on another's post.
-  [DEPLOYED APP ON HEROKU](<https://tranquil-earth-68039.herokuapp.com/>)
+  [DEPLOYED APP ON HEROKU](<https://sam-p-tech-blog.herokuapp.com/>)
 
   # Table of Contents:
   * [Installation](#installation)
